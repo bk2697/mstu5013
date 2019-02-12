@@ -93,7 +93,7 @@
 
 			<!-- MAIN CONTENT: START -->
 			<div id="main" class="col-9">
-				
+
 				<!-- REVEAL TAG -->
 				<reveal if={ menuState == "partyReveal" } players={ players }></reveal>
 
@@ -105,7 +105,8 @@
   <script>
     // JAVASCRIPT
 		let tag = this;
-
+		console.log(this);
+		
 		const endWWII = new Date('September 02, 1945');
 		const today = new Date();
 
