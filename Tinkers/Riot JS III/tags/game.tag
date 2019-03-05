@@ -144,16 +144,6 @@
 			this.menuState = "playerCount";
 		}
 
-		/********************
-		EXAMPLE: The following this.startOnline function is the long-hand ver.
-		of writing functions in RIOT. We'll use the short-hand version going forward.
-
-		this.startOnline = function(event) {
-			this.online = true;
-			this.menuState = "playerCount";
-		}
-		********************/
-
 		setNumPlayers(event) {
 			this.playerCount = Number(event.target.value);
 			this.playerTypes = getPlayerTypes(this.playerCount);
@@ -210,9 +200,6 @@
 					this.players[i].party = roles[i];
 				}
 			}
-
-			let randIndex = Math.floor(Math.random() * this.players.length);
-			this.players[randIndex].president = true;
 		}
 
 		updateReadyCount() {
@@ -286,9 +273,9 @@
 		Comment OUT to start from beginning
 		********************/
 		(function() {
-			console.log('game.tag', this);
+			// console.log('game.tag', this);
 
-			let playerCount = 10;
+			let playerCount = 5;
 			this.playerTypes = getPlayerTypes(playerCount);
 			this.players = createPlayers(playerCount);
 

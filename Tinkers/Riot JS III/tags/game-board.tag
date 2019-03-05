@@ -108,7 +108,7 @@
 			<button class="btn btn-secondary" type="button" onclick={ print }>PRINT THIS</button>
 			<button class="btn btn-secondary" type="button" onclick={ incrementCount }>COUNT++</button>
 			<button class="btn btn-secondary" type="button" onclick={ decrementCount }>COUNT--</button>
-			<button class="btn btn-secondary" type="button" onclick={ updateTag }>UPDATE TAG</button>
+			<button class="btn btn-secondary" type="button" onclick={ update }>UPDATE TAG</button>
 		</div>
 	</div>
 
@@ -257,21 +257,22 @@
 		incrementCount(event) {
 			event.preventUpdate = true;
 			this.miscellaneousCount++;
-			console.log(this.miscellaneousCount);
 		}
 		decrementCount(event) {
 			this.miscellaneousCount--;
-			console.log(this.miscellaneousCount);
 		}
 
-		updateTag() {
-			this.update();
-		}
-
-		// UNIMPLEMENTED FUNCTIONS
-		setPresident() {
-			let president = this.players.find(player => player.president);
-		}
+		/********************
+		Observer Listeners
+		********************/
+		observer.on('government:chaos', () => {
+			let policy = this.policyDrawDeck.splice(0, 1)[0];
+			if (policy === "fascist") {
+				// What now?
+			} else {
+				// What now?
+			}
+		});
 
   </script>
 
